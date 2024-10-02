@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFCC00; /* Dark Yellow */
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFB300; /* Lighter Yellow */
+}
+
+.shopping-list {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shopping-list th, .shopping-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.shopping-list th {
+    background-color: #FFCC00;
+}
+
+.shopping-list tr:hover {
+    background-color: #555;
+    color: white;
+}
+
+.calendar {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.calendar th {
+    background-color: #FFCC00;
+}
+
+.calendar tr:hover {
+    background-color: #555;
+    color: white;
+}

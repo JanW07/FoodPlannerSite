@@ -1,0 +1,190 @@
+{
+    "recipes": [
+        {
+            "name": "Pasta",
+            "ingredients": {
+                "Pasta": {"quantity": 200, "type": "grams"},
+                "Tomato Sauce": {"quantity": 150, "type": "grams"},
+                "Parmesan Cheese": {"quantity": 50, "type": "grams"}
+            }
+        },
+        {
+            "name": "Salad",
+            "ingredients": {
+                "Lettuce": {"quantity": 1, "type": "piece"},
+                "Tomato": {"quantity": 2, "type": "pieces"},
+                "Cucumber": {"quantity": 1, "type": "piece"}
+            }
+        },
+        {
+            "name": "Chicken Stir Fry",
+            "ingredients": {
+                "Chicken Breast": {"quantity": 300, "type": "grams"},
+                "Bell Peppers": {"quantity": 150, "type": "grams"},
+                "Soy Sauce": {"quantity": 50, "type": "ml"},
+                "Rice": {"quantity": 100, "type": "grams"}
+            }
+        },
+        {
+            "name": "Beef Tacos",
+            "ingredients": {
+                "Ground Beef": {"quantity": 250, "type": "grams"},
+                "Taco Shells": {"quantity": 4, "type": "pieces"},
+                "Lettuce": {"quantity": 50, "type": "grams"},
+                "Cheese": {"quantity": 50, "type": "grams"},
+                "Salsa": {"quantity": 30, "type": "grams"}
+            }
+        },
+        {
+            "name": "Vegetable Curry",
+            "ingredients": {
+                "Mixed Vegetables": {"quantity": 300, "type": "grams"},
+                "Coconut Milk": {"quantity": 400, "type": "ml"},
+                "Curry Powder": {"quantity": 2, "type": "tablespoons"},
+                "Rice": {"quantity": 200, "type": "grams"}
+            }
+        },
+        {
+            "name": "Spaghetti Bolognese",
+            "ingredients": {
+                "Spaghetti": {"quantity": 200, "type": "grams"},
+                "Ground Beef": {"quantity": 250, "type": "grams"},
+                "Tomato Sauce": {"quantity": 200, "type": "grams"},
+                "Onion": {"quantity": 1, "type": "piece"},
+                "Garlic": {"quantity": 2, "type": "cloves"}
+            }
+        },
+        {
+            "name": "Caprese Salad",
+            "ingredients": {
+                "Mozzarella Cheese": {"quantity": 150, "type": "grams"},
+                "Tomatoes": {"quantity": 3, "type": "pieces"},
+                "Basil": {"quantity": 10, "type": "grams"},
+                "Olive Oil": {"quantity": 20, "type": "ml"}
+            }
+        },
+        {
+            "name": "Fried Rice",
+            "ingredients": {
+                "Rice": {"quantity": 300, "type": "grams"},
+                "Eggs": {"quantity": 2, "type": "pieces"},
+                "Carrots": {"quantity": 100, "type": "grams"},
+                "Soy Sauce": {"quantity": 50, "type": "ml"}
+            }
+        },
+        {
+            "name": "Margarita Pizza",
+            "ingredients": {
+                "Pizza Dough": {"quantity": 1, "type": "piece"},
+                "Tomato Sauce": {"quantity": 100, "type": "grams"},
+                "Mozzarella Cheese": {"quantity": 200, "type": "grams"},
+                "Basil": {"quantity": 5, "type": "grams"}
+            }
+        },
+        {
+            "name": "Quiche",
+            "ingredients": {
+                "Pie Crust": {"quantity": 1, "type": "piece"},
+                "Eggs": {"quantity": 4, "type": "pieces"},
+                "Cream": {"quantity": 200, "type": "ml"},
+                "Cheese": {"quantity": 100, "type": "grams"},
+                "Spinach": {"quantity": 100, "type": "grams"}
+            }
+        },
+        {
+            "name": "Stuffed Peppers",
+            "ingredients": {
+                "Bell Peppers": {"quantity": 4, "type": "pieces"},
+                "Ground Beef": {"quantity": 300, "type": "grams"},
+                "Rice": {"quantity": 150, "type": "grams"},
+                "Tomato Sauce": {"quantity": 200, "type": "grams"}
+            }
+        },
+        {
+            "name": "Chicken Caesar Salad",
+            "ingredients": {
+                "Romaine Lettuce": {"quantity": 150, "type": "grams"},
+                "Grilled Chicken": {"quantity": 200, "type": "grams"},
+                "Caesar Dressing": {"quantity": 30, "type": "ml"},
+                "Croutons": {"quantity": 50, "type": "grams"},
+                "Parmesan Cheese": {"quantity": 20, "type": "grams"}
+            }
+        },
+        {
+            "name": "Baked Salmon",
+            "ingredients": {
+                "Salmon Fillet": {"quantity": 300, "type": "grams"},
+                "Lemon": {"quantity": 1, "type": "piece"},
+                "Olive Oil": {"quantity": 30, "type": "ml"},
+                "Herbs": {"quantity": 5, "type": "grams"}
+            }
+        },
+        {
+            "name": "Vegetable Stir Fry",
+            "ingredients": {
+                "Mixed Vegetables": {"quantity": 400, "type": "grams"},
+                "Soy Sauce": {"quantity": 50, "type": "ml"},
+                "Tofu": {"quantity": 200, "type": "grams"},
+                "Rice": {"quantity": 150, "type": "grams"}
+            }
+        },
+        {
+            "name": "Chili Con Carne",
+            "ingredients": {
+                "Ground Beef": {"quantity": 400, "type": "grams"},
+                "Kidney Beans": {"quantity": 200, "type": "grams"},
+                "Tomato Sauce": {"quantity": 300, "type": "grams"},
+                "Onion": {"quantity": 1, "type": "piece"},
+                "Chili Powder": {"quantity": 2, "type": "tablespoons"}
+            }
+        },
+        {
+            "name": "Lentil Soup",
+            "ingredients": {
+                "Lentils": {"quantity": 200, "type": "grams"},
+                "Carrots": {"quantity": 100, "type": "grams"},
+                "Celery": {"quantity": 100, "type": "grams"},
+                "Vegetable Broth": {"quantity": 500, "type": "ml"},
+                "Onion": {"quantity": 1, "type": "piece"}
+            }
+        },
+        {
+            "name": "Shrimp Scampi",
+            "ingredients": {
+                "Shrimp": {"quantity": 300, "type": "grams"},
+                "Garlic": {"quantity": 3, "type": "cloves"},
+                "Lemon": {"quantity": 1, "type": "piece"},
+                "Butter": {"quantity": 50, "type": "grams"},
+                "Pasta": {"quantity": 200, "type": "grams"}
+            }
+        },
+        {
+            "name": "Baked Potatoes",
+            "ingredients": {
+                "Potatoes": {"quantity": 4, "type": "pieces"},
+                "Butter": {"quantity": 50, "type": "grams"},
+                "Sour Cream": {"quantity": 100, "type": "grams"},
+                "Chives": {"quantity": 10, "type": "grams"}
+            }
+        },
+        {
+            "name": "French Toast",
+            "ingredients": {
+                "Bread": {"quantity": 4, "type": "slices"},
+                "Eggs": {"quantity": 2, "type": "pieces"},
+                "Milk": {"quantity": 100, "type": "ml"},
+                "Cinnamon": {"quantity": 1, "type": "teaspoon"}
+            }
+        },
+        {
+            "name": "Chocolate Cake",
+            "ingredients": {
+                "Flour": {"quantity": 200, "type": "grams"},
+                "Cocoa Powder": {"quantity": 50, "type": "grams"},
+                "Sugar": {"quantity": 150, "type": "grams"},
+                "Eggs": {"quantity": 3, "type": "pieces"},
+                "Butter": {"quantity": 100, "type": "grams"}
+            }
+        }
+    ]
+}
