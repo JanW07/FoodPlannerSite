@@ -35,16 +35,21 @@ def write_shopping_list_to_file(shopping_list):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     with open(output_path, 'w') as f:
-        json.dump(shopping_list, f)
+        json.dump(shopping_list, f, indent=4)
 
 # Write meals plan to a JSON file
 def write_meals_to_file(assigned_recipes):
     output_path = 'output/meals_plan.json'
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
-    meals_plan = [recipe['name'] for recipe in assigned_recipes]
+    meals_plan = {}
+    days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    
+    for i, recipe in enumerate(assigned_recipes):
+        meals_plan[days_of_week[i]] = recipe['name']
+    
     with open(output_path, 'w') as f:
-        json.dump(meals_plan, f)
+        json.dump(meals_plan, f, indent=4)
 
 @app.route('/')
 def index():
@@ -90,7 +95,7 @@ def get_shopping_list():
     except FileNotFoundError:
         return jsonify({'error': 'Shopping list not found.'}), 404
 
-# New route to read and serve meals plan from JSON
+# New route to serve meals plan from JSON
 @app.route('/meals-plan', methods=['GET'])
 def get_meals_plan():
     try:
@@ -99,7 +104,6 @@ def get_meals_plan():
         return jsonify({'meals_plan': data})
     except FileNotFoundError:
         return jsonify({'error': 'Meals plan not found.'}), 404
-
 
 if __name__ == '__main__':
     app.run(debug=True)

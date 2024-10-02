@@ -1,1 +1,9 @@
-["Vegetable Stir Fry", "Quiche", "Pasta", "Chili Con Carne", "Chicken Caesar Salad", "Beef Tacos", "Fried Rice"]
+{
+    "Monday": "Fried Rice",
+    "Tuesday": "Chocolate Cake",
+    "Wednesday": "Vegetable Stir Fry",
+    "Thursday": "French Toast",
+    "Friday": "Chicken Caesar Salad",
+    "Saturday": "Salad",
+    "Sunday": "Baked Salmon"
+}

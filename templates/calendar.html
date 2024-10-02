@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Calendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
+
+    <title>Weekly Calendar</title>
 </head>
 <body>
     <div class="container">
-        <h1>Weekly Calendar</h1>
-        <table class="calendar">
+        <h1>Weekly Meal Plan</h1>
+        <table class="calendar-table">
             <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Meal</th>
+                <tr id="days-row">
+                    <!-- Days of the week will be inserted here dynamically -->
                 </tr>
             </thead>
-            <tbody id="meals-plan-body">
-                <!-- Meals plan will be inserted here -->
+            <tbody>
+                <tr id="meals-row">
+                    <!-- Meals will be inserted here dynamically -->
+                </tr>
             </tbody>
         </table>
         <button onclick="window.history.back()">Back</button>
@@ -30,14 +34,25 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-                    const tbody = document.getElementById('meals-plan-body');
-                    tbody.innerHTML = ''; // Clear existing rows
+                    const daysRow = document.getElementById('days-row');
+                    const mealsRow = document.getElementById('meals-row');
+                    
+                    daysRow.innerHTML = ''; // Clear any existing columns
+                    mealsRow.innerHTML = ''; // Clear any existing columns
 
-                    data.meals_plan.forEach((meal, index) => {
-                        const tr = document.createElement('tr');
-                        tr.innerHTML = `<td>${daysOfWeek[index]}</td><td>${meal}</td>`;
-                        tbody.appendChild(tr);
+                    // Populate days and meals
+                    Object.keys(data.meals_plan).forEach(day => {
+                        const meal = data.meals_plan[day];
+
+                        // Add day to the header
+                        const dayTh = document.createElement('th');
+                        dayTh.textContent = day;
+                        daysRow.appendChild(dayTh);
+
+                        // Add meal to the meals row
+                        const mealTd = document.createElement('td');
+                        mealTd.textContent = meal;
+                        mealsRow.appendChild(mealTd);
                     });
                 } else {
                     console.error('Error:', data.error);
@@ -48,7 +63,6 @@
         }
 
         window.onload = fetchMealsPlan;
-
     </script>
 </body>
 </html>
