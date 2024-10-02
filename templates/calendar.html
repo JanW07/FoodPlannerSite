@@ -6,12 +6,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
-
     <title>Weekly Calendar</title>
 </head>
 <body>
     <div class="container">
-        <h1>Weekly Meal Plan</h1>
+        <h1>Weekly Calendar</h1>
         <table class="calendar-table">
             <thead>
                 <tr id="days-row">
@@ -27,42 +26,6 @@
         <button onclick="window.history.back()">Back</button>
     </div>
 
-    <script>
-        async function fetchMealsPlan() {
-            try {
-                const response = await fetch('/meals-plan');
-                const data = await response.json();
-
-                if (response.ok) {
-                    const daysRow = document.getElementById('days-row');
-                    const mealsRow = document.getElementById('meals-row');
-                    
-                    daysRow.innerHTML = ''; // Clear any existing columns
-                    mealsRow.innerHTML = ''; // Clear any existing columns
-
-                    // Populate days and meals
-                    Object.keys(data.meals_plan).forEach(day => {
-                        const meal = data.meals_plan[day];
-
-                        // Add day to the header
-                        const dayTh = document.createElement('th');
-                        dayTh.textContent = day;
-                        daysRow.appendChild(dayTh);
-
-                        // Add meal to the meals row
-                        const mealTd = document.createElement('td');
-                        mealTd.textContent = meal;
-                        mealsRow.appendChild(mealTd);
-                    });
-                } else {
-                    console.error('Error:', data.error);
-                }
-            } catch (error) {
-                console.error('Error fetching meals plan:', error);
-            }
-        }
-
-        window.onload = fetchMealsPlan;
-    </script>
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
 </body>
 </html>

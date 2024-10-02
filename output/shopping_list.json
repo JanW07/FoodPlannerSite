@@ -1,42 +1,38 @@
 {
-    "Rice": {
-        "quantity": 450,
+    "Mixed Vegetables": {
+        "quantity": 300,
         "type": "grams"
     },
-    "Eggs": {
-        "quantity": 7,
-        "type": "pieces"
-    },
-    "Carrots": {
-        "quantity": 100,
-        "type": "grams"
-    },
-    "Soy Sauce": {
-        "quantity": 100,
+    "Coconut Milk": {
+        "quantity": 400,
         "type": "ml"
     },
-    "Flour": {
+    "Curry Powder": {
+        "quantity": 2,
+        "type": "tablespoons"
+    },
+    "Rice": {
+        "quantity": 350,
+        "type": "grams"
+    },
+    "Pie Crust": {
+        "quantity": 1,
+        "type": "piece"
+    },
+    "Eggs": {
+        "quantity": 6,
+        "type": "pieces"
+    },
+    "Cream": {
         "quantity": 200,
-        "type": "grams"
+        "type": "ml"
     },
-    "Cocoa Powder": {
-        "quantity": 50,
-        "type": "grams"
-    },
-    "Sugar": {
-        "quantity": 150,
-        "type": "grams"
-    },
-    "Butter": {
+    "Cheese": {
         "quantity": 100,
         "type": "grams"
     },
-    "Mixed Vegetables": {
-        "quantity": 400,
-        "type": "grams"
-    },
-    "Tofu": {
-        "quantity": 200,
+    "Spinach": {
+        "quantity": 100,
         "type": "grams"
     },
     "Bread": {
@@ -51,37 +47,37 @@
         "quantity": 1,
         "type": "teaspoon"
     },
-    "Romaine Lettuce": {
-        "quantity": 150,
+    "Ground Beef": {
+        "quantity": 700,
         "type": "grams"
     },
-    "Grilled Chicken": {
+    "Kidney Beans": {
         "quantity": 200,
         "type": "grams"
     },
-    "Caesar Dressing": {
-        "quantity": 30,
-        "type": "ml"
-    },
-    "Croutons": {
-        "quantity": 50,
+    "Tomato Sauce": {
+        "quantity": 600,
         "type": "grams"
     },
-    "Parmesan Cheese": {
-        "quantity": 20,
-        "type": "grams"
-    },
-    "Lettuce": {
+    "Onion": {
         "quantity": 1,
         "type": "piece"
     },
-    "Tomato": {
+    "Chili Powder": {
         "quantity": 2,
-        "type": "pieces"
+        "type": "tablespoons"
     },
-    "Cucumber": {
+    "Pizza Dough": {
         "quantity": 1,
         "type": "piece"
+    },
+    "Mozzarella Cheese": {
+        "quantity": 200,
+        "type": "grams"
+    },
+    "Basil": {
+        "quantity": 5,
+        "type": "grams"
     },
     "Salmon Fillet": {
         "quantity": 300,
@@ -98,5 +94,9 @@
     "Herbs": {
         "quantity": 5,
         "type": "grams"
+    },
+    "Bell Peppers": {
+        "quantity": 4,
+        "type": "pieces"
     }
 }

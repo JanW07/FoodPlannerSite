@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
-        <title>Food Generator - Menu</title>
+    <title>Home</title>
 </head>
 <body>
     <div class="container">
-        <h1>Weekly Food Generator</h1>
-        <button id="generate-btn">Generate</button>
-        <button id="list-btn">List</button>
+        <h1>Welcome to the Meal Planner</h1>
+        <button id="generate-btn">Generate Meal Plan</button>
+        <button id="list-btn">Shopping List</button>
         <button id="calendar-btn">Calendar</button>
         <button id="options-btn">Options</button>
+        <div id="recipes"></div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
