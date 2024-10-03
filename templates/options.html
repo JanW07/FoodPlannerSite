@@ -21,9 +21,6 @@
         <!-- Delete Recipe Button -->
         <button id="deleteRecipeBtn">Delete Recipe</button>
 
-        <!-- Set Portions Button -->
-        <button id="setPortionsBtn">Set Portions</button>
-
         <!-- Back Button -->
         <button onclick="window.history.back()">Back</button>
     </div>
@@ -78,17 +75,7 @@
         </div>
     </div>
 
-    <!-- Modal for Setting Portions -->
-    <div id="portionModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Set Portions</h2>
-            <p>Set how many people will eat this meal:</p>
-            <label for="portionSlider">Number of People: <span id="portionCount">1</span></label>
-            <input type="range" id="portionSlider" min="1" max="10" value="1">
-            <button id="savePortionsBtn">Save Portions</button>
-        </div>
-    </div>
+
 
     <script src="{{ url_for('static', filename='js/options.js') }}"></script>
 </body>

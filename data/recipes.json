@@ -2,396 +2,367 @@
     "recipes": [
         {
             "name": "Pasta",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Pasta",
+            "active": true,
+            "ingredients": {
+                "Pasta": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Tomato Sauce",
+                "Tomato Sauce": {
                     "quantity": 150,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Parmesan Cheese",
+                "Parmesan Cheese": {
                     "quantity": 50,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "Salad",
-            "active": false,
-            "portions": 4,
-            "ingredients": [
-                {
-                    "name": "Lettuce",
+            "active": true,
+            "ingredients": {
+                "Lettuce": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 },
-                {
-                    "name": "Tomato",
+                "Tomato": {
                     "quantity": 2,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Cucumber",
+                "Cucumber": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 }
-            ]
+            }
+        },
+        {
+            "name": "Chicken Stir Fry",
+            "active": true,
+            "ingredients": {
+                "Chicken Breast": {
+                    "quantity": 300,
+                    "type": "grams"
+                },
+                "Bell Peppers": {
+                    "quantity": 150,
+                    "type": "grams"
+                },
+                "Soy Sauce": {
+                    "quantity": 50,
+                    "type": "ml"
+                },
+                "Rice": {
+                    "quantity": 100,
+                    "type": "grams"
+                }
+            }
         },
         {
             "name": "Beef Tacos",
-            "active": false,
-            "portions": 4,
-            "ingredients": [
-                {
-                    "name": "Ground Beef",
+            "active": true,
+            "ingredients": {
+                "Ground Beef": {
                     "quantity": 250,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Taco Shells",
+                "Taco Shells": {
                     "quantity": 4,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Lettuce",
+                "Lettuce": {
                     "quantity": 50,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Cheese",
+                "Cheese": {
                     "quantity": 50,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Salsa",
+                "Salsa": {
                     "quantity": 30,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "Spaghetti Bolognese",
             "active": true,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Spaghetti",
+            "ingredients": {
+                "Spaghetti": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Ground Beef",
+                "Ground Beef": {
                     "quantity": 250,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Tomato Sauce",
+                "Tomato Sauce": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Onion",
+                "Onion": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 },
-                {
-                    "name": "Garlic",
+                "Garlic": {
                     "quantity": 2,
-                    "unit": "cloves"
+                    "type": "cloves"
                 }
-            ]
+            }
         },
         {
             "name": "Caprese Salad",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Mozzarella Cheese",
+            "active": true,
+            "ingredients": {
+                "Mozzarella Cheese": {
                     "quantity": 150,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Tomatoes",
+                "Tomatoes": {
                     "quantity": 3,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Basil",
+                "Basil": {
                     "quantity": 10,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Olive Oil",
+                "Olive Oil": {
                     "quantity": 20,
-                    "unit": "ml"
+                    "type": "ml"
                 }
-            ]
+            }
         },
         {
             "name": "Fried Rice",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Rice",
+            "active": true,
+            "ingredients": {
+                "Rice": {
                     "quantity": 300,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Eggs",
+                "Eggs": {
                     "quantity": 2,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Carrots",
+                "Carrots": {
                     "quantity": 100,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Soy Sauce",
+                "Soy Sauce": {
                     "quantity": 50,
-                    "unit": "ml"
+                    "type": "ml"
                 }
-            ]
+            }
         },
         {
             "name": "Margarita Pizza",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Pizza Dough",
+            "active": true,
+            "ingredients": {
+                "Pizza Dough": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 },
-                {
-                    "name": "Tomato Sauce",
+                "Tomato Sauce": {
                     "quantity": 100,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Mozzarella Cheese",
+                "Mozzarella Cheese": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Basil",
+                "Basil": {
                     "quantity": 5,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "Stuffed Peppers",
-            "active": false,
-            "portions": 4,
-            "ingredients": [
-                {
-                    "name": "Bell Peppers",
+            "active": true,
+            "ingredients": {
+                "Bell Peppers": {
                     "quantity": 4,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Ground Beef",
+                "Ground Beef": {
                     "quantity": 300,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Rice",
+                "Rice": {
                     "quantity": 150,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Tomato Sauce",
+                "Tomato Sauce": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "Chicken Caesar Salad",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Romaine Lettuce",
+            "active": true,
+            "ingredients": {
+                "Romaine Lettuce": {
                     "quantity": 150,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Grilled Chicken",
+                "Grilled Chicken": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Caesar Dressing",
+                "Caesar Dressing": {
                     "quantity": 30,
-                    "unit": "ml"
+                    "type": "ml"
                 },
-                {
-                    "name": "Croutons",
+                "Croutons": {
                     "quantity": 50,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Parmesan Cheese",
+                "Parmesan Cheese": {
                     "quantity": 20,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "Baked Salmon",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Salmon Fillet",
+            "active": true,
+            "ingredients": {
+                "Salmon Fillet": {
                     "quantity": 300,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Lemon",
+                "Lemon": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 },
-                {
-                    "name": "Olive Oil",
+                "Olive Oil": {
                     "quantity": 30,
-                    "unit": "ml"
+                    "type": "ml"
                 },
-                {
-                    "name": "Herbs",
+                "Herbs": {
                     "quantity": 5,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
+        },
+        {
+            "name": "Vegetable Stir Fry",
+            "active": true,
+            "ingredients": {
+                "Mixed Vegetables": {
+                    "quantity": 400,
+                    "type": "grams"
+                },
+                "Soy Sauce": {
+                    "quantity": 50,
+                    "type": "ml"
+                },
+                "Tofu": {
+                    "quantity": 200,
+                    "type": "grams"
+                },
+                "Rice": {
+                    "quantity": 150,
+                    "type": "grams"
+                }
+            }
         },
         {
             "name": "Chili Con Carne",
-            "active": false,
-            "portions": 4,
-            "ingredients": [
-                {
-                    "name": "Ground Beef",
+            "active": true,
+            "ingredients": {
+                "Ground Beef": {
                     "quantity": 400,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Kidney Beans",
+                "Kidney Beans": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Tomato Sauce",
+                "Tomato Sauce": {
                     "quantity": 300,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Onion",
+                "Onion": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 },
-                {
-                    "name": "Chili Powder",
+                "Chili Powder": {
                     "quantity": 2,
-                    "unit": "tablespoons"
+                    "type": "tablespoons"
                 }
-            ]
+            }
         },
         {
             "name": "Shrimp Scampi",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Shrimp",
+            "active": true,
+            "ingredients": {
+                "Shrimp": {
                     "quantity": 300,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Garlic",
+                "Garlic": {
                     "quantity": 3,
-                    "unit": "cloves"
+                    "type": "cloves"
                 },
-                {
-                    "name": "Lemon",
+                "Lemon": {
                     "quantity": 1,
-                    "unit": "piece"
+                    "type": "piece"
                 },
-                {
-                    "name": "Butter",
+                "Butter": {
                     "quantity": 50,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Pasta",
+                "Pasta": {
                     "quantity": 200,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "Baked Potatoes",
-            "active": false,
-            "portions": 4,
-            "ingredients": [
-                {
-                    "name": "Potatoes",
+            "active": true,
+            "ingredients": {
+                "Potatoes": {
                     "quantity": 4,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Butter",
+                "Butter": {
                     "quantity": 50,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Sour Cream",
+                "Sour Cream": {
                     "quantity": 100,
-                    "unit": "grams"
+                    "type": "grams"
                 },
-                {
-                    "name": "Chives",
+                "Chives": {
                     "quantity": 10,
-                    "unit": "grams"
+                    "type": "grams"
                 }
-            ]
+            }
         },
         {
             "name": "French Toast",
-            "active": false,
-            "portions": 2,
-            "ingredients": [
-                {
-                    "name": "Bread",
+            "active": true,
+            "ingredients": {
+                "Bread": {
                     "quantity": 4,
-                    "unit": "slices"
+                    "type": "slices"
                 },
-                {
-                    "name": "Eggs",
+                "Eggs": {
                     "quantity": 2,
-                    "unit": "pieces"
+                    "type": "pieces"
                 },
-                {
-                    "name": "Milk",
+                "Milk": {
                     "quantity": 100,
-                    "unit": "ml"
+                    "type": "ml"
                 },
-                {
-                    "name": "Cinnamon",
+                "Cinnamon": {
                     "quantity": 1,
-                    "unit": "teaspoon"
+                    "type": "teaspoon"
                 }
-            ]
+            }
         }
     ]
 }
