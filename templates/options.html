@@ -5,13 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
     <title>Options</title>
 </head>
 <body>
     <div class="container">
         <h1>Options</h1>
-        <!-- Options content goes here -->
+
+        <!-- Add Recipe Button -->
+        <button id="addRecipeBtn">Add Recipe</button>
+
+        <!-- Back Button -->
         <button onclick="window.history.back()">Back</button>
+    </div>
+
+    <!-- Modal for Adding Recipe -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Recipe</h2>
+            <form id="recipeForm">
+                <label for="recipeName">Recipe Name:</label>
+                <input type="text" id="recipeName" name="recipeName" required>
+
+                <h3>Ingredients</h3>
+                <div id="ingredientsList">
+                    <div class="ingredient-row">
+                        <input type="text" name="ingredient[]" placeholder="Ingredient" required>
+                        <input type="number" name="quantity[]" placeholder="Quantity" required>
+                        <select name="type[]">
+                            <option value="g">Grams</option>
+                            <option value="ml">Milliliters</option>
+                            <option value="tbsp">Tablespoons</option>
+                            <option value="tsp">Teaspoons</option>
+                            <option value="pcs">Pieces</option>
+                        </select>
+                        <button type="button" class="removeIngredientBtn">-</button>
+                    </div>
+                </div>
+                <button type="button" id="addIngredientBtn">+ Add Ingredient</button>
+
+                <button type="submit">Save Recipe</button>
+            </form>
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='js/options.js') }}"></script>

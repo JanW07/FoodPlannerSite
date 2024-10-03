@@ -1,15 +1,23 @@
-from flask import Flask, render_template, jsonify, send_file
+from flask import Flask, render_template, request, jsonify  # Add `request` here
 import json
 import random
 import os
 
 app = Flask(__name__)
 
+# Path to the recipes.json file
+RECIPES_FILE_PATH = 'data/recipes.json'
+
 # Load recipes from JSON
 def load_recipes():
-    with open('data/recipes.json', 'r') as f:
+    with open(RECIPES_FILE_PATH, 'r') as f:
         data = json.load(f)
     return data['recipes']
+
+# Save recipes to JSON
+def save_recipes(recipes):
+    with open(RECIPES_FILE_PATH, 'w') as f:
+        json.dump({'recipes': recipes}, f, indent=4)
 
 # Assign random recipes for the week
 def assign_recipes(recipes):
@@ -84,6 +92,23 @@ def calendar_view():
 @app.route('/options')
 def options_view():
     return render_template('options.html')
+
+# Route to add a new recipe
+@app.route('/add-recipe', methods=['POST'])
+def add_recipe():
+    new_recipe = request.json  # Get the recipe data from the request
+
+    # Load the current recipes from the JSON file
+    recipes = load_recipes()
+
+    # Add the new recipe to the list
+    recipes.append(new_recipe)
+
+    # Save the updated recipes back to the JSON file
+    save_recipes(recipes)
+
+    return jsonify({"message": "Recipe added successfully!"}), 200
+
 
 # New route to read and serve shopping list from JSON
 @app.route('/shopping-list', methods=['GET'])
