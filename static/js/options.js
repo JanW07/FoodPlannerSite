@@ -1,23 +1,38 @@
-// Modal functionality for adding recipe
-const addRecipeModal = document.getElementById('recipeModal');
-const addRecipeBtn = document.getElementById('addRecipeBtn');
-const closeAddRecipe = addRecipeModal.getElementsByClassName('close')[0];
+// Utility function to open a modal by id
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
 
-// Open the modal for adding recipe
+// Utility function to close a modal by id
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}
+
+// Event listener for closing modals by clicking outside
+window.onclick = function(event) {
+    const modals = ['recipeModal', 'activeRecipesModal', 'deleteModal', 'portionModal'];
+    modals.forEach(modalId => {
+        const modal = document.getElementById(modalId);
+        if (event.target === modal) {
+            closeModal(modalId);
+        }
+    });
+}
+
+// Modal functionality for adding recipe
+const addRecipeBtn = document.getElementById('addRecipeBtn');
+const closeAddRecipe = document.getElementById('recipeModal').getElementsByClassName('close')[0];
+
+// Open modal for adding recipe
 addRecipeBtn.onclick = function() {
-    addRecipeModal.style.display = 'block';
+    openModal('recipeModal');
 }
 
 // Close the modal for adding recipe
 closeAddRecipe.onclick = function() {
-    addRecipeModal.style.display = 'none';
-}
-
-// Close the modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target === addRecipeModal) {
-        addRecipeModal.style.display = 'none';
-    }
+    closeModal('recipeModal');
 }
 
 // Add new ingredient row functionality
@@ -78,7 +93,7 @@ document.getElementById('recipeForm').addEventListener('submit', function(event)
     }).then(response => {
         if (response.ok) {
             console.log('Recipe added successfully');
-            addRecipeModal.style.display = 'none'; // Close the modal on success
+            closeModal('recipeModal'); // Close the modal on success
             event.target.reset(); // Clear form fields after submission
         } else {
             console.error('Failed to add recipe');
@@ -86,32 +101,31 @@ document.getElementById('recipeForm').addEventListener('submit', function(event)
     });
 });
 
-// Modal functionality for showing all recipes with active/inactive distinction
+// Modal functionality for showing all recipes
 const showActiveRecipesBtn = document.getElementById('showActiveRecipesBtn');
-const activeRecipesModal = document.getElementById('activeRecipesModal');
-const closeActiveRecipesModal = activeRecipesModal.getElementsByClassName('close')[0];
-const activeRecipeList = document.getElementById('activeRecipeList');
+const closeActiveRecipesModal = document.getElementById('activeRecipesModal').getElementsByClassName('close')[0];
 
-// Open the modal for showing all recipes (active and inactive)
+// Open modal for showing active recipes
 showActiveRecipesBtn.onclick = function() {
-    activeRecipesModal.style.display = 'block';
+    openModal('activeRecipesModal');
 
     // Fetch all recipes from the server (both active and inactive)
     fetch('/active-recipes')
         .then(response => response.json())
         .then(data => {
+            const activeRecipeList = document.getElementById('activeRecipeList');
             activeRecipeList.innerHTML = ''; // Clear previous list items
 
             // Display each recipe and apply active/inactive styles
             data.forEach(recipe => {
                 const li = document.createElement('li');
-                li.textContent = recipe.name; // Show the name of the recipe
-                li.classList.add(recipe.active ? 'active' : 'inactive'); // Add classes for styling
+                li.textContent = recipe.name;
+                li.classList.add(recipe.active ? 'active' : 'inactive');
 
                 // Toggle active/inactive state on click
                 li.onclick = function() {
-                    const newActiveState = !recipe.active; // Toggle state
-                    recipe.active = newActiveState;  // Update the state in the local object
+                    const newActiveState = !recipe.active;
+                    recipe.active = newActiveState;
 
                     li.classList.toggle('active', newActiveState);
                     li.classList.toggle('inactive', !newActiveState);
@@ -130,39 +144,30 @@ showActiveRecipesBtn.onclick = function() {
                     });
                 };
 
-                activeRecipeList.appendChild(li);  // Add the recipe to the list
+                activeRecipeList.appendChild(li);
             });
         });
-};
+}
 
-// Close the active recipes modal
+// Close active recipes modal
 closeActiveRecipesModal.onclick = function() {
-    activeRecipesModal.style.display = 'none';
-};
-
-// Close the modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target === activeRecipesModal) {
-        activeRecipesModal.style.display = 'none';
-    }
-};
-
+    closeModal('activeRecipesModal');
+}
 
 // Modal functionality for deleting recipe
-const deleteRecipeModal = document.getElementById('deleteModal');
 const deleteRecipeBtn = document.getElementById('deleteRecipeBtn');
-const closeDeleteRecipeModal = deleteRecipeModal.getElementsByClassName('close')[0];
-const recipeList = document.getElementById('recipeList');
+const closeDeleteRecipeModal = document.getElementById('deleteModal').getElementsByClassName('close')[0];
 const confirmDeleteBtn = document.getElementById('confirmDelete');
 
-// Open the modal for deleting recipe
+// Open modal for deleting recipe
 deleteRecipeBtn.onclick = function() {
-    deleteRecipeModal.style.display = 'block';
+    openModal('deleteModal');
 
     // Fetch recipes from the server to populate the delete modal
     fetch('/recipes')
         .then(response => response.json())
         .then(data => {
+            const recipeList = document.getElementById('recipeList');
             recipeList.innerHTML = ''; // Clear any previous list items
 
             data.forEach(recipe => {
@@ -181,23 +186,15 @@ deleteRecipeBtn.onclick = function() {
         });
 }
 
-
-// Close the modal for deleting recipe
+// Close delete recipe modal
 closeDeleteRecipeModal.onclick = function() {
-    deleteRecipeModal.style.display = 'none';
-}
-
-// Close the modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target === deleteRecipeModal) {
-        deleteRecipeModal.style.display = 'none';
-    }
+    closeModal('deleteModal');
 }
 
 // Confirm delete selected recipes
 confirmDeleteBtn.onclick = function() {
     const selectedRecipes = Array.from(document.querySelectorAll('.recipe-checkbox:checked'))
-                                .map(checkbox => checkbox.nextSibling.textContent);
+        .map(checkbox => checkbox.nextSibling.textContent);
 
     if (selectedRecipes.length > 0) {
         // Send delete request for all selected recipes
@@ -210,9 +207,10 @@ confirmDeleteBtn.onclick = function() {
         }).then(response => {
             if (response.ok) {
                 console.log('Recipes deleted successfully');
-                deleteRecipeModal.style.display = 'none'; // Close the modal
+                closeModal('deleteModal'); // Close the modal
                 selectedRecipes.forEach(recipe => {
-                    const listItem = Array.from(recipeList.children).find(li => li.textContent.trim() === recipe);
+                    const listItem = Array.from(document.getElementById('recipeList').children)
+                        .find(li => li.textContent.trim() === recipe);
                     if (listItem) listItem.remove();
                 });
             } else {
@@ -226,14 +224,13 @@ confirmDeleteBtn.onclick = function() {
 
 // Modal for setting portions
 const setPortionsBtn = document.getElementById('setPortionsBtn');
-const portionModal = document.getElementById('portionModal');
 const portionSlider = document.getElementById('portionSlider');
 const portionCount = document.getElementById('portionCount');
 const savePortionsBtn = document.getElementById('savePortionsBtn');
 
-// Open the modal for setting portions
+// Open modal for setting portions
 setPortionsBtn.onclick = function() {
-    portionModal.style.display = 'block';
+    openModal('portionModal');
 }
 
 // Update displayed portion count when slider is moved
@@ -245,12 +242,5 @@ portionSlider.oninput = function() {
 savePortionsBtn.onclick = function() {
     const selectedPortions = portionSlider.value;
     alert('Number of portions: ' + selectedPortions);
-    portionModal.style.display = 'none';
-}
-
-// Close the modal when clicking outside
-window.onclick = function(event) {
-    if (event.target === portionModal) {
-        portionModal.style.display = 'none';
-    }
+    closeModal('portionModal');
 }
