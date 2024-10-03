@@ -224,3 +224,33 @@ confirmDeleteBtn.onclick = function() {
     }
 }
 
+// Modal for setting portions
+const setPortionsBtn = document.getElementById('setPortionsBtn');
+const portionModal = document.getElementById('portionModal');
+const portionSlider = document.getElementById('portionSlider');
+const portionCount = document.getElementById('portionCount');
+const savePortionsBtn = document.getElementById('savePortionsBtn');
+
+// Open the modal for setting portions
+setPortionsBtn.onclick = function() {
+    portionModal.style.display = 'block';
+}
+
+// Update displayed portion count when slider is moved
+portionSlider.oninput = function() {
+    portionCount.innerText = this.value;
+}
+
+// Save the selected portion value
+savePortionsBtn.onclick = function() {
+    const selectedPortions = portionSlider.value;
+    alert('Number of portions: ' + selectedPortions);
+    portionModal.style.display = 'none';
+}
+
+// Close the modal when clicking outside
+window.onclick = function(event) {
+    if (event.target === portionModal) {
+        portionModal.style.display = 'none';
+    }
+}

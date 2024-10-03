@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+/* Range input for portions */
+input[type="range"] {
+    width: 100%;
+}
+
 /* Ingredient Row */
 .ingredient-row {
     display: flex;
