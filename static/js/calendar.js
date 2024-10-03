@@ -4,25 +4,29 @@ async function fetchMealsPlan() {
         const data = await response.json();
 
         if (response.ok) {
-            const daysRow = document.getElementById('days-row');
-            const mealsRow = document.getElementById('meals-row');
+            const mealsTableBody = document.getElementById('meals-table-body');
             
-            daysRow.innerHTML = ''; // Clear existing columns
-            mealsRow.innerHTML = ''; // Clear existing columns
+            mealsTableBody.innerHTML = ''; // Clear existing rows
 
             // Populate days and meals
             Object.keys(data.meals_plan).forEach(day => {
                 const meal = data.meals_plan[day];
 
-                // Add day to the header
-                const dayTh = document.createElement('th');
-                dayTh.textContent = day;
-                daysRow.appendChild(dayTh);
+                // Create a new row for each day-meal pair
+                const mealRow = document.createElement('tr');
 
-                // Add meal to the meals row
+                // Add day cell
+                const dayTd = document.createElement('td');
+                dayTd.textContent = day;
+                mealRow.appendChild(dayTd);
+
+                // Add meal cell
                 const mealTd = document.createElement('td');
                 mealTd.textContent = meal;
-                mealsRow.appendChild(mealTd);
+                mealRow.appendChild(mealTd);
+
+                // Append the meal row to the table body
+                mealsTableBody.appendChild(mealRow);
             });
         } else {
             console.error('Error:', data.error);

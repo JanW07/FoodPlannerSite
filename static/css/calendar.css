@@ -11,8 +11,7 @@
 /* Calendar Table Styling */
 .calendar-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse; /* Use collapse to prevent spacing issues */
     border: 2px solid #f2f2f2; /* Add outer border */
 }
 
@@ -22,6 +21,8 @@
     border: 1px solid #f2f2f2; /* Clear separation between cells */
     background-color: #333; /* Background color of table cells */
     color: #FFCC00; /* Text color */
+    width: 50%; /* Each cell takes half of the table width */
+    height: 60px; /* Set a fixed height for all cells */
 }
 
 .calendar-table th {
@@ -43,21 +44,4 @@
 .calendar-table tr:hover {
     background-color: #555;
     color: white;
-}
-
-/* Button Styling */
-button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
-    background-color: #FFCC00;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #FFB300;
 }
