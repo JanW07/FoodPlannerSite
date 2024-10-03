@@ -1,22 +1,22 @@
-// Modal functionality
-const modal = document.getElementById('recipeModal');
+// Modal functionality for adding recipe
+const addRecipeModal = document.getElementById('recipeModal');
 const addRecipeBtn = document.getElementById('addRecipeBtn');
-const span = document.getElementsByClassName('close')[0];
+const closeAddRecipe = document.getElementsByClassName('close')[0];
 
-// Open the modal
+// Open the modal for adding recipe
 addRecipeBtn.onclick = function() {
-    modal.style.display = 'block';
+    addRecipeModal.style.display = 'block';
 }
 
-// Close the modal
-span.onclick = function() {
-    modal.style.display = 'none';
+// Close the modal for adding recipe
+closeAddRecipe.onclick = function() {
+    addRecipeModal.style.display = 'none';
 }
 
 // Close the modal when clicking outside of it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    if (event.target == addRecipeModal) {
+        addRecipeModal.style.display = 'none';
     }
 }
 
@@ -85,7 +85,7 @@ document.getElementById('recipeForm').addEventListener('submit', function(event)
     }).then(response => {
         if (response.ok) {
             console.log('Recipe added successfully');
-            modal.style.display = 'none';
+            addRecipeModal.style.display = 'none';
         } else {
             console.error('Failed to add recipe');
         }
@@ -94,3 +94,72 @@ document.getElementById('recipeForm').addEventListener('submit', function(event)
     // Clear form fields
     event.target.reset();
 });
+
+
+// Modal functionality for deleting recipe
+const deleteRecipeModal = document.getElementById('deleteModal');
+const deleteRecipeBtn = document.getElementById('deleteRecipeBtn');
+const closeDeleteRecipe = document.getElementsByClassName('close')[1];
+const recipeList = document.getElementById('recipeList');
+const confirmDeleteBtn = document.getElementById('confirmDelete');
+
+// Open the modal for deleting recipe
+deleteRecipeBtn.onclick = function() {
+    deleteRecipeModal.style.display = 'block';
+
+    // Fetch recipes from the server to populate the delete modal
+    fetch('/recipes')
+        .then(response => response.json())
+        .then(data => {
+            recipeList.innerHTML = ''; // Clear any previous list items
+
+            data.forEach(recipe => {
+                const li = document.createElement('li');
+                li.textContent = recipe;
+                li.onclick = function() {
+                    li.classList.toggle('selected'); // Toggle selection
+                };
+                recipeList.appendChild(li);
+            });
+        });
+}
+
+// Close the modal for deleting recipe
+closeDeleteRecipe.onclick = function() {
+    deleteRecipeModal.style.display = 'none';
+}
+
+// Close the modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == deleteRecipeModal) {
+        deleteRecipeModal.style.display = 'none';
+    }
+}
+
+// Confirm delete selected recipe
+confirmDeleteBtn.onclick = function() {
+    const selectedRecipe = document.querySelector('.selected');
+
+    if (selectedRecipe) {
+        const recipeName = selectedRecipe.textContent;
+
+        // Send delete request to the server
+        fetch('/delete-recipe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ recipe_name: recipeName })
+        }).then(response => {
+            if (response.ok) {
+                console.log('Recipe deleted successfully');
+                deleteRecipeModal.style.display = 'none'; // Close the modal
+                selectedRecipe.remove(); // Remove from the list
+            } else {
+                console.error('Failed to delete recipe');
+            }
+        });
+    } else {
+        alert('Please select a recipe to delete');
+    }
+}

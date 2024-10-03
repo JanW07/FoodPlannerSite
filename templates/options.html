@@ -15,6 +15,9 @@
         <!-- Add Recipe Button -->
         <button id="addRecipeBtn">Add Recipe</button>
 
+        <!-- Delete Recipe Button -->
+        <button id="deleteRecipeBtn">Delete Recipe</button>
+
         <!-- Back Button -->
         <button onclick="window.history.back()">Back</button>
     </div>
@@ -47,6 +50,16 @@
 
                 <button type="submit">Save Recipe</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Modal for Deleting Recipe -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Delete Recipe</h2>
+            <ul id="recipeList"></ul>
+            <button id="confirmDelete">Delete Selected</button>
         </div>
     </div>
 

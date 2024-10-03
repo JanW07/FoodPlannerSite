@@ -420,36 +420,11 @@
             }
         },
         {
-            "name": "Chocolate Cake",
+            "name": "test2",
             "ingredients": {
-                "Flour": {
-                    "quantity": 200,
-                    "type": "grams"
-                },
-                "Cocoa Powder": {
-                    "quantity": 50,
-                    "type": "grams"
-                },
-                "Sugar": {
-                    "quantity": 150,
-                    "type": "grams"
-                },
-                "Eggs": {
-                    "quantity": 3,
-                    "type": "pieces"
-                },
-                "Butter": {
-                    "quantity": 100,
-                    "type": "grams"
-                }
-            }
-        },
-        {
-            "name": "testrecipe",
-            "ingredients": {
-                "asdasd": {
+                "asd": {
                     "quantity": "23",
-                    "type": "g"
+                    "type": "ml"
                 }
             }
         }

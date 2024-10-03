@@ -130,5 +130,29 @@ def get_meals_plan():
     except FileNotFoundError:
         return jsonify({'error': 'Meals plan not found.'}), 404
 
+# Route to delete a recipe
+@app.route('/delete-recipe', methods=['POST'])
+def delete_recipe():
+    recipe_to_delete = request.json.get('recipe_name')
+
+    # Load the current recipes
+    recipes = load_recipes()
+
+    # Filter out the recipe to delete
+    recipes = [recipe for recipe in recipes if recipe['name'] != recipe_to_delete]
+
+    # Save the updated list of recipes
+    save_recipes(recipes)
+
+    return jsonify({"message": "Recipe deleted successfully!"}), 200
+
+# Route to fetch all recipes (for the delete modal)
+@app.route('/recipes', methods=['GET'])
+def get_recipes():
+    recipes = load_recipes()
+    recipe_names = [recipe['name'] for recipe in recipes]
+    return jsonify(recipe_names), 200
+
+
 if __name__ == '__main__':
     app.run(debug=True)
