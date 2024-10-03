@@ -2,6 +2,7 @@
     "recipes": [
         {
             "name": "Pasta",
+            "active": false,
             "ingredients": {
                 "Pasta": {
                     "quantity": 200,
@@ -19,6 +20,7 @@
         },
         {
             "name": "Salad",
+            "active": false,
             "ingredients": {
                 "Lettuce": {
                     "quantity": 1,
@@ -36,6 +38,7 @@
         },
         {
             "name": "Chicken Stir Fry",
+            "active": false,
             "ingredients": {
                 "Chicken Breast": {
                     "quantity": 300,
@@ -57,6 +60,7 @@
         },
         {
             "name": "Beef Tacos",
+            "active": false,
             "ingredients": {
                 "Ground Beef": {
                     "quantity": 250,
@@ -81,28 +85,8 @@
             }
         },
         {
-            "name": "Vegetable Curry",
-            "ingredients": {
-                "Mixed Vegetables": {
-                    "quantity": 300,
-                    "type": "grams"
-                },
-                "Coconut Milk": {
-                    "quantity": 400,
-                    "type": "ml"
-                },
-                "Curry Powder": {
-                    "quantity": 2,
-                    "type": "tablespoons"
-                },
-                "Rice": {
-                    "quantity": 200,
-                    "type": "grams"
-                }
-            }
-        },
-        {
             "name": "Spaghetti Bolognese",
+            "active": true,
             "ingredients": {
                 "Spaghetti": {
                     "quantity": 200,
@@ -128,6 +112,7 @@
         },
         {
             "name": "Caprese Salad",
+            "active": false,
             "ingredients": {
                 "Mozzarella Cheese": {
                     "quantity": 150,
@@ -149,6 +134,7 @@
         },
         {
             "name": "Fried Rice",
+            "active": false,
             "ingredients": {
                 "Rice": {
                     "quantity": 300,
@@ -170,6 +156,7 @@
         },
         {
             "name": "Margarita Pizza",
+            "active": false,
             "ingredients": {
                 "Pizza Dough": {
                     "quantity": 1,
@@ -190,32 +177,8 @@
             }
         },
         {
-            "name": "Quiche",
-            "ingredients": {
-                "Pie Crust": {
-                    "quantity": 1,
-                    "type": "piece"
-                },
-                "Eggs": {
-                    "quantity": 4,
-                    "type": "pieces"
-                },
-                "Cream": {
-                    "quantity": 200,
-                    "type": "ml"
-                },
-                "Cheese": {
-                    "quantity": 100,
-                    "type": "grams"
-                },
-                "Spinach": {
-                    "quantity": 100,
-                    "type": "grams"
-                }
-            }
-        },
-        {
             "name": "Stuffed Peppers",
+            "active": true,
             "ingredients": {
                 "Bell Peppers": {
                     "quantity": 4,
@@ -237,6 +200,7 @@
         },
         {
             "name": "Chicken Caesar Salad",
+            "active": true,
             "ingredients": {
                 "Romaine Lettuce": {
                     "quantity": 150,
@@ -262,6 +226,7 @@
         },
         {
             "name": "Baked Salmon",
+            "active": true,
             "ingredients": {
                 "Salmon Fillet": {
                     "quantity": 300,
@@ -283,6 +248,7 @@
         },
         {
             "name": "Vegetable Stir Fry",
+            "active": true,
             "ingredients": {
                 "Mixed Vegetables": {
                     "quantity": 400,
@@ -304,6 +270,7 @@
         },
         {
             "name": "Chili Con Carne",
+            "active": true,
             "ingredients": {
                 "Ground Beef": {
                     "quantity": 400,
@@ -328,32 +295,8 @@
             }
         },
         {
-            "name": "Lentil Soup",
-            "ingredients": {
-                "Lentils": {
-                    "quantity": 200,
-                    "type": "grams"
-                },
-                "Carrots": {
-                    "quantity": 100,
-                    "type": "grams"
-                },
-                "Celery": {
-                    "quantity": 100,
-                    "type": "grams"
-                },
-                "Vegetable Broth": {
-                    "quantity": 500,
-                    "type": "ml"
-                },
-                "Onion": {
-                    "quantity": 1,
-                    "type": "piece"
-                }
-            }
-        },
-        {
             "name": "Shrimp Scampi",
+            "active": true,
             "ingredients": {
                 "Shrimp": {
                     "quantity": 300,
@@ -379,6 +322,7 @@
         },
         {
             "name": "Baked Potatoes",
+            "active": true,
             "ingredients": {
                 "Potatoes": {
                     "quantity": 4,
@@ -400,6 +344,7 @@
         },
         {
             "name": "French Toast",
+            "active": true,
             "ingredients": {
                 "Bread": {
                     "quantity": 4,
@@ -416,15 +361,6 @@
                 "Cinnamon": {
                     "quantity": 1,
                     "type": "teaspoon"
-                }
-            }
-        },
-        {
-            "name": "test2",
-            "ingredients": {
-                "asd": {
-                    "quantity": "23",
-                    "type": "ml"
                 }
             }
         }

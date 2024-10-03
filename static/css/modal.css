@@ -48,3 +48,33 @@
 .ingredient-row select {
     width: 30%;
 }
+
+/* Checkbox style for recipe deletion */
+#recipeList {
+    list-style: none;
+    padding: 0;
+}
+
+#recipeList li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#recipeList li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Active recipe styling */
+.active {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Inactive recipe styling (darker appearance) */
+.inactive {
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify  # Add `request` here
+from flask import Flask, render_template, request, jsonify, send_file
 import json
 import random
 import os
@@ -21,8 +21,10 @@ def save_recipes(recipes):
 
 # Assign random recipes for the week
 def assign_recipes(recipes):
-    random.shuffle(recipes)
-    return recipes[:7]  # Return 7 random recipes for 7 days
+    # Filter active recipes
+    active_recipes = [recipe for recipe in recipes if recipe['active']]
+    random.shuffle(active_recipes)
+    return active_recipes[:7]  # Return 7 random active recipes for 7 days
 
 # Generate shopping list
 def generate_shopping_list(assigned_recipes):
@@ -79,7 +81,7 @@ def generate():
 
 @app.route('/download')
 def download():
-    return send_file('output/shopping_list.txt', as_attachment=True)
+    return send_file('output/shopping_list.json', as_attachment=True)  # Corrected to match JSON format
 
 @app.route('/list')
 def list_view():
@@ -92,23 +94,6 @@ def calendar_view():
 @app.route('/options')
 def options_view():
     return render_template('options.html')
-
-# Route to add a new recipe
-@app.route('/add-recipe', methods=['POST'])
-def add_recipe():
-    new_recipe = request.json  # Get the recipe data from the request
-
-    # Load the current recipes from the JSON file
-    recipes = load_recipes()
-
-    # Add the new recipe to the list
-    recipes.append(new_recipe)
-
-    # Save the updated recipes back to the JSON file
-    save_recipes(recipes)
-
-    return jsonify({"message": "Recipe added successfully!"}), 200
-
 
 # New route to read and serve shopping list from JSON
 @app.route('/shopping-list', methods=['GET'])
@@ -130,22 +115,6 @@ def get_meals_plan():
     except FileNotFoundError:
         return jsonify({'error': 'Meals plan not found.'}), 404
 
-# Route to delete a recipe
-@app.route('/delete-recipe', methods=['POST'])
-def delete_recipe():
-    recipe_to_delete = request.json.get('recipe_name')
-
-    # Load the current recipes
-    recipes = load_recipes()
-
-    # Filter out the recipe to delete
-    recipes = [recipe for recipe in recipes if recipe['name'] != recipe_to_delete]
-
-    # Save the updated list of recipes
-    save_recipes(recipes)
-
-    return jsonify({"message": "Recipe deleted successfully!"}), 200
-
 # Route to fetch all recipes (for the delete modal)
 @app.route('/recipes', methods=['GET'])
 def get_recipes():
@@ -153,6 +122,51 @@ def get_recipes():
     recipe_names = [recipe['name'] for recipe in recipes]
     return jsonify(recipe_names), 200
 
+# Adjusted route to get only active recipes
+@app.route('/active-recipes', methods=['GET'])
+def active_recipes():
+    recipes = load_recipes()
+    # Return all recipes (both active and inactive)
+    return jsonify(recipes)
+
+@app.route('/add-recipe', methods=['POST'])
+def add_recipe():
+    new_recipe = request.json
+    recipes = load_recipes()
+    new_recipe['active'] = True  # Set new recipe as active by default
+    recipes.append(new_recipe)  # Append the new recipe
+    save_recipes(recipes)
+    return jsonify(success=True)
+
+@app.route('/update-recipe-status', methods=['POST'])
+def update_recipe_status():
+    data = request.json
+    recipes = load_recipes()
+    for recipe in recipes:
+        if recipe['name'] == data['recipe_name']:
+            recipe['active'] = data['active']  # Update active status
+            save_recipes(recipes)
+            return jsonify(success=True)
+    return jsonify(success=False), 404  # Return error if recipe not found
+
+@app.route('/delete-recipes', methods=['POST'])
+def delete_recipes():
+    data = request.json
+    recipes_to_delete = data.get('recipe_names', [])  # Get the list of recipe names to delete
+
+    if not recipes_to_delete:
+        return jsonify(success=False, message="No recipes selected for deletion"), 400
+
+    # Load existing recipes
+    recipes = load_recipes()
+
+    # Filter out the recipes that should be deleted
+    recipes = [recipe for recipe in recipes if recipe['name'] not in recipes_to_delete]
+
+    # Save the updated recipe list
+    save_recipes(recipes)
+
+    return jsonify(success=True, message="Recipes deleted successfully")
 
 if __name__ == '__main__':
     app.run(debug=True)

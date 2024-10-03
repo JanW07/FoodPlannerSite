@@ -15,6 +15,9 @@
         <!-- Add Recipe Button -->
         <button id="addRecipeBtn">Add Recipe</button>
 
+        <!-- Show Active Recipes Button -->
+        <button id="showActiveRecipesBtn">Show Active Recipes</button>
+
         <!-- Delete Recipe Button -->
         <button id="deleteRecipeBtn">Delete Recipe</button>
 
@@ -46,10 +49,18 @@
                         <button type="button" class="removeIngredientBtn">-</button>
                     </div>
                 </div>
-                <button type="button" id="addIngredientBtn">+ Add Ingredient</button>
-
+                <button type="button" id="addIngredientBtn">Add Ingredient</button>
                 <button type="submit">Save Recipe</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Modal for Showing Active Recipes -->
+    <div id="activeRecipesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Active Recipes</h2>
+            <ul id="activeRecipeList"></ul>
         </div>
     </div>
 
@@ -58,10 +69,13 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Delete Recipe</h2>
+            <p>Select recipes to delete:</p>
             <ul id="recipeList"></ul>
-            <button id="confirmDelete">Delete Selected</button>
+            <button id="confirmDelete">Confirm Delete</button>
         </div>
     </div>
+
+
 
     <script src="{{ url_for('static', filename='js/options.js') }}"></script>
 </body>
