@@ -8,9 +8,12 @@ async function fetchMealsPlan() {
             
             mealsTableBody.innerHTML = ''; // Clear existing rows
 
-            // Populate days and meals
-            Object.keys(data.meals_plan).forEach(day => {
-                const meal = data.meals_plan[day];
+            // Define the order of the days of the week
+            const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+            // Populate days and meals in the correct order
+            daysOfWeek.forEach(day => {
+                const meal = data.meals_plan[day] || 'No meal planned'; // Provide a fallback if no meal exists
 
                 // Create a new row for each day-meal pair
                 const mealRow = document.createElement('tr');

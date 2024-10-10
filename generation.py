@@ -17,11 +17,40 @@ def save_recipes(recipes):
     with open(RECIPES_FILE_PATH, 'w') as f:
         json.dump({'recipes': recipes}, f, indent=4)
 
-# Assign random recipes for the week
+# Assign random recipes for the week with portion control
 def assign_recipes(recipes):
     active_recipes = [recipe for recipe in recipes if recipe['active']]
     random.shuffle(active_recipes)
-    return active_recipes[:7]  # Return 7 random active recipes for 7 days
+
+    assigned_recipes = []
+    day_index = 0
+
+    # Assign recipes for the first 6 days
+    while day_index < 6:
+        if not active_recipes:
+            break
+        recipe = active_recipes.pop(0)
+
+        if recipe['number_of_portions'] == 4:
+            # Assign for the current day and the next day
+            if day_index < 5:  # Ensure we don't exceed the day limit
+                assigned_recipes.append(recipe)
+                assigned_recipes.append(recipe)
+                day_index += 2
+        else:
+            # Assign for one day
+            assigned_recipes.append(recipe)
+            day_index += 1
+
+    # Assign a 2-portion meal for the last day
+    last_day_recipe = next((r for r in active_recipes if r['number_of_portions'] == 2), None)
+    if last_day_recipe:
+        assigned_recipes.append(last_day_recipe)
+    else:
+        # If no 2-portion meals left, pick any random recipe with 2 portions
+        assigned_recipes.append(random.choice([r for r in recipes if r['number_of_portions'] == 2]))
+
+    return assigned_recipes
 
 # Generate shopping list
 def generate_shopping_list(assigned_recipes):
