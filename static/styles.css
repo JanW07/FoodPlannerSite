@@ -1,0 +1,232 @@
+/* Enhanced button styles (from buttons.css) */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFCC00; /* Dark Yellow */
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #FFB300; /* Lighter Yellow */
+    transform: scale(1.05); /* Add a subtle scale effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.98); /* Shrink button on click */
+}
+
+/* Enhanced container styles (from global.css and calendar.css) */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #444;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.8s ease; /* Fade-in effect */
+}
+
+/* Calendar Table Styling (from calendar.css) */
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #f2f2f2;
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+    background-color: #333;
+    color: #FFCC00;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.calendar-table th {
+    background-color: #FFCC00;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calendar-table td {
+    background-color: #444;
+    color: #f2f2f2;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-table tr:hover td {
+    background-color: #555;
+    color: white;
+}
+
+.calendar-table td:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Global styles (from global.css) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Modal styles (from modal.css) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    animation: fadeIn 0.6s ease;
+}
+
+.modal-content {
+    background-color: #444;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    color: white;
+    border-radius: 15px;
+    animation: slideUp 0.5s ease;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Range input for portions (from modal.css) */
+input[type="range"] {
+    width: 100%;
+}
+
+/* Ingredient row styling (from modal.css) */
+.ingredient-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.ingredient-row:hover {
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.ingredient-row input,
+.ingredient-row select {
+    width: 35%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    background-color: #333;
+    color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+.ingredient-row input:focus,
+.ingredient-row select:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+}
+
+/* Active/inactive recipe styling (from modal.css) */
+.active {
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.inactive {
+    color: #000;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.active:hover, .inactive:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Shopping list styling (from shopping-list.css) */
+.shopping-list {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    animation: fadeIn 0.8s ease;
+}
+
+.shopping-list th, .shopping-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease;
+}
+
+.shopping-list th {
+    background-color: #FFCC00;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+
+.shopping-list td:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
